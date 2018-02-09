@@ -60,7 +60,7 @@ Note that (at the time these instructions were written) the current official rel
 If you're viewing this on testpypi.python.org, try this instead:
 ::
 
-    $ pip install -i https://testpypi.python.org/pypi msaviz
+    $ pip install --index-url https://test.pypi.org/simple/ msaviz
 
 Quickstart Guide
 ----------------
