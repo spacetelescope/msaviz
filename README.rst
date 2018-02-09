@@ -107,7 +107,7 @@ When the interface has opened, complete the following steps on the file select s
 3. Choose an MSA config file which has been exported from APT.
 4. Press ``Parse`` and wait while the MSA config file is parsed and the wavelengths are calculated.
 5. The ``Display spectra from stuck-open shutters`` checkbox will toggle whether or not spectra from stuck-open shutters will be included in the visualization.
-5. Once this is complete, press ``Show the Spectrum Display!`` to view the visualization.
+6. Once this is complete, press ``Show the Spectrum Display!`` to view the visualization.
 
 .. figure:: https://github.com/spacetelescope/msaviz/blob/master/screenshots/fileselect_screen.png
    :alt: File Select Screen
