@@ -555,6 +555,7 @@ class MSAConfig(object):
 
         lo, hi = self.sci_range
         all_waves = self._msa(coords)
+        all_waves[all_waves == 0.0] = np.nan
         top = 1 - self._quads % 2
         lims = np.full((self.nopen, 4), np.nan, dtype=float)
         
@@ -568,8 +569,8 @@ class MSAConfig(object):
             fin, = np.any(np.isfinite(wopen), axis=1).nonzero() #ensure there's at least one good value
             ok = fin[np.logical_and(np.nanmin(wopen[fin],axis=1) <= hi,
                                     np.nanmax(wopen[fin],axis=1) >= lo)]
-            lims[ok,   n*2] = np.maximum(wopen[ok].min(axis=1), lo)
-            lims[ok, 1+n*2] = np.minimum(wopen[ok].max(axis=1), hi)
+            lims[ok,   n*2] = np.maximum(np.nanmin(wopen[ok], axis=1), lo)
+            lims[ok, 1+n*2] = np.minimum(np.nanmax(wopen[ok], axis=1), hi)
         self._shutter_limits = lims
     
     @property
